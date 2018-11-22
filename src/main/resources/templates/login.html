@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>登录页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <script th:inline="javascript">
+    	var basePath = [[${session.basePath}]];
+    </script>
+</head>
+<body class="text-center">
+<div class="form-signin" role="form">
+    <!--<p th:text="${session.basePath}">path</p>-->
+    <div class="input-group">
+        <h2 class="text-info text-center">请登录</h2>
+    </div>
+    <p class="text-warning hidden" id="errorInfo"><p>
+    <input id="loginname" type="text" class="form-control input-lg" placeholder="请输入用户名" value="vinci">
+    <input id="loginpwd" type="password" class="form-control input-lg" placeholder="请输入密码" value="vinci">
+    <div style="padding-top: 10px;">
+        <button id="login" class="btn  btn-lg btn-primary col-lg-9">登录</button>
+        <button class="btn btn-lg btn-link  col-lg-3">注册</button>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="js/login.js"></script>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>日历首页</title>
+		<link rel="stylesheet" href="css/responsive-nav.css" />
+		<link rel="stylesheet" href="css/homepage.css" />
+		<link rel="stylesheet" href="css/mystyle.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-switch.css" />
+		<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+		<!--<link rel="stylesheet" href="css/summernote.css" />-->
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div role="navigation" id="nav">
+			<ul>
+				<li class="active" id="record">
+					<a>记录</a>
+				</li>
+				<li id="account">
+					<a>小账</a>
+				</li>
+				<li id="analysis">
+					<a>回顾</a>
+				</li>
+				<li id="setting">
+					<a>设定</a>
+				</li>
+			</ul>
+		</div>
+		<div role="main" class="main">
+			<a href="#nav" id="toggle">Menu</a>
+			<p>欢迎归来~亲爱滴~ [[${session.user.userName}]]</p>
+			<div id="recordContent" class="content">
+				<!--<h1>记录</h1>-->
+				<!--<p class="intro">点点滴滴.</p>-->
+				<table class="table table-bordered">
+					<!--<caption>
+						<button type="button" class="btn btn-info captionLeft" data-toggle="button">-</button>
+						2018年8月
+						<button type="button" class="btn btn-info captionRight" data-toggle="button">+</button>
+					</caption>-->
+				</table>
+			</div>
+			<div id="accountContent" class="content">
+				<h1>小账</h1>
+				<p class="intro">Despite the apparent simplicity, there are many underlying factors which, when thought through and implemented properly, can make a simple solution even better without adding more complexity to the user&nbsp;interface.</p>
+			</div>
+			<div id="analysisContent" class="content">
+				<h1>回顾</h1>
+				<p class="intro">Despite the apparent simplicity, there are many underlying factors which, when thought through and implemented properly, can make a simple solution even better without adding more complexity to the user&nbsp;interface.</p>
+			</div>
+			<div id="settingContent" class="content">
+				<h1>设定</h1>
+				<p class="intro">Despite the apparent simplicity, there are many underlying factors which, when thought through and implemented properly, can make a simple solution even better without adding more complexity to the user&nbsp;interface.</p>
+			</div>
+		</div>
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="myRecord" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myRecordLabel">日期</h4>
+				</div>
+				<div class="modal-body row">
+					<div class="panel-group col-lg-6" id="schedule">
+					    <div class="panel panel-default">
+					        <div class="panel-heading">
+					            <h4 class="panel-title">
+					                <a data-toggle="collapse" data-parent="#schedule" 
+					                href="#collapseOne">日程</a>
+					            <button class="btn btn-default btn-xs opertionIcon" id="addSchedule"><i class="fa fa-plus"></i></button>
+					            </h4>
+					        </div>
+					        <div id="collapseOne" class="panel-collapse collapse in">
+					            <div class="panel-body">
+					                <table class="table">
+								   	<thead>
+								     	<tr>
+								        	<th>事件标题</th>
+								        	<th>主题</th>
+								        	<th>备注</th>
+								      	</tr>
+								   </thead>
+								   <tbody>
+								    	<tr>
+								        	<td>打疫苗</td>
+								        	<td>猫咪</td>
+								        	<td>第二联</td>
+								     	</tr>
+								    	<tr>
+								        	<td>买猫粮</td>
+								        	<td>猫咪</td>
+								        	<td>-</td>
+								    	</tr>
+								   	</tbody>
+								</table>
+								<ul class="pager">
+								    <li class="previous"><a href="#">&larr;</a></li>
+								    <li class="next"><a href="#">&rarr;</a></li>
+								</ul>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="panel panel-default">
+					        <div class="panel-heading">
+					            <h4 class="panel-title">
+					                <a data-toggle="collapse" data-parent="#accordion" 
+					                href="#collapseTwo">备忘</a>
+					                <button class="btn btn-default btn-xs opertionIcon" id="addCheat"><i class="fa fa-plus"></i></button>
+					            </h4>
+					        </div>
+					        <div id="collapseTwo" class="panel-collapse collapse">
+					        <div class="panel-body">
+					                <table class="table">
+								   <tbody>
+								    	<tr>
+								        	<td><p><span><b>备忘录测试</b></span></p></td>
+								     	</tr>
+								     	<tr>
+								        	<td><p><span><b>备忘录测试1</b></span></p></td>
+								     	</tr>
+								   	</tbody>
+								</table>
+								<ul class="pager">
+								    <li class="previous"><a href="#">&larr;</a></li>
+								    <li class="next"><a href="#">&rarr;</a></li>
+								</ul>					            
+					        </div>
+					        </div>
+					    </div>
+					    <div class="panel panel-default">
+					        <div class="panel-heading">
+					            <h4 class="panel-title">
+					                <a data-toggle="collapse" data-parent="#accordion" 
+					                href="#collapseThree">账本</a>
+					                <button class="btn btn-default btn-xs opertionIcon" id="addAccount"><i class="fa fa-plus"></i></button>
+					            </h4>
+					        </div>
+					        <div id="collapseThree" class="panel-collapse collapse">
+					            <div class="panel-body">
+					                Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+					                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+					                vice lomo.
+					            </div>
+					        </div>
+					    </div>
+					</div>
+					<div class="panel-group col-lg-6" id="edit">
+					    <div class="panel panel-default">
+					        <div class="panel-heading">
+					            <h4 class="panel-title">
+					                <a data-toggle="collapse" data-parent="#edit" 
+					                href="#editOpertion" id="editTitle">添加</a>
+					            </h4>
+					            <button class="btn btn-default btn-xs opertionIcon" id="closeEdit"><i class="glyphicon glyphicon-remove"></i></button>
+					        </div>
+					        <div id="editOpertion" class="panel-collapse collapse in">
+					            <div class="panel-body">
+					            	<form>
+  										<textarea id="summernote" name="editordata"></textarea>
+									</form>
+					                <!--<form class="form-horizontal" role="form">
+					                <div class="col-lg-12 paddingBotton10">
+      									<input type="text" class="form-control" id="eventName" placeholder="请输入事件标题">
+    								</div>
+    								<div class="col-lg-12 paddingBotton10">
+										<div class="switch"  id="theme">
+											启用主题<input type="checkbox" />
+										</div>
+								    </div>
+								    <div class="col-lg-12 paddingBotton10" id="addScheduleThemeRadio" >
+								    	<div class="radio">
+								    		<label>
+										        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>猫咪
+								    		</label>
+								    		<label>
+										        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">玩耍
+								    		</label>
+								    		<label>
+										        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">玩耍
+								    		</label>
+								    		<label>
+										        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">玩耍
+								    		</label>
+								    		<label>
+										        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">玩耍
+								    		</label>
+								    		<label>
+										        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">玩耍
+								    		</label>
+								    		<label>
+										        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">玩耍
+								    		</label>
+								    		<label>
+										        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"><input id="newTheme" placeholder="请输入新主题"/>
+								    		</label>
+										</div>
+								    </div>
+								    <div class="col-lg-12 paddingBotton10">
+								    	<div class="switch"  id="eventType">
+										全天事件<input type="checkbox" />
+										</div>
+								    </div>
+								    <div class="col-lg-12 paddingBotton10">
+										<input type="text"  class="form-control" id="startRecordTime" placeholder="开始时间">
+								    </div>
+								    <div class="col-lg-12 paddingBotton10">
+										<input type="text"  class="form-control" id="endRecordTime" placeholder="结束时间">
+								    </div>
+								    <div class="col-lg-12 paddingBotton10">
+								    	<div class="switch"  id="remind">
+										提醒<input type="checkbox" />
+										</div>
+								    </div>
+								    <div class="col-lg-12 paddingBotton10" id="remindSelect">
+								    	<select class="form-control">
+											<option>活动开始前</option>
+											<option>5分钟前</option>
+											<option>10分钟前</option>
+											<option>15分钟前</option>
+											<option>30分钟前</option>
+											<option>1小时前</option>
+											<option>1天前</option>
+											<option>2天前</option>
+											<option>1周前</option>
+										</select>
+								    </div>
+								    <div class="col-lg-12 paddingBotton10">
+								    	<div class="switch"  id="repeat">
+										重复<input type="checkbox" />
+										</div>
+								    </div>
+								    <div class="col-lg-12 paddingBotton10" id="repeatSelect">
+								    	<select class="form-control">
+											<option>每天</option>
+											<option>每个工作日(周一至周五)</option>
+											<option>每周</option>
+											<option>每月</option>
+											<option>每年</option>
+											<option>自定义</option>
+										</select>
+								    </div>
+								    <div class="col-lg-12 paddingBotton10">
+      									<textarea class="form-control" rows="3" placeholder="请输入备注"></textarea>
+    								</div>
+									<div class="col-lg-12 paddingTop10" style="text-align: center;">
+									    <button type="submit" class="btn btn-default">保存</button>
+									</div>
+								</form>-->
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<!--<button type="button" class="btn btn-primary">
+						提交更改
+					</button>-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="js/responsive-nav.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/bootstable.js" ></script>
+		<script type="text/javascript" src="js/bootstrap-switch.js" ></script>
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="js/summernote.js" ></script>
+		<script type="text/javascript" src="js/summernote-zh-CN.js" ></script>		
+		<script type="text/javascript" src="js/homepage.js"></script>
+		<script type="text/javascript" src="js/record.js" ></script>
+		<script>
+			var navigation = responsiveNav("#nav",{customToggle:"#toggle"});
+		</script>
+	</body>
+
+</html>

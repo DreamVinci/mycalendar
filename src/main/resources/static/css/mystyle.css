@@ -1,0 +1,53 @@
+
+.content{
+	width: auto;
+}
+table,caption{
+	text-align: center !important;
+}
+.table th{
+	text-align: center !important;
+}
+#recordContent tr,#recordContent caption{
+	font-size: 1.25em !important;
+    color: #555 !important;;
+    font-weight: 700 !important;
+}
+.gray{
+	color: gray !important;
+}
+.red{
+	color:#ff000078 !important;
+}
+#recordContent td{
+	height: 70px;
+    line-height: 70px;
+}
+.captionLeft{
+	margin-right:10px;
+	font-weight: 700 !important;
+	font-size: 1.25em !important;
+}
+.captionRight{
+	margin-left:10px;
+	font-weight: 700 !important;
+	font-size: 1.25em !important;
+}
+.opertionIcon{
+	float: right;
+	position: relative;
+    top: -4px;
+    right: -6px;
+}
+.paddingBotton10{
+	padding-bottom: 10px;
+}
+.paddingTop10{
+	padding-top: 10px;
+}
+.bootstrap-switch{
+	float: right;
+}
+#closeEdit{
+	top: -20px;
+}
